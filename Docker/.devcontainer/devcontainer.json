@@ -1,0 +1,23 @@
+{
+  "name": "tag-dock (ROS2 Humble)",
+  "dockerComposeFile": "compose.yml",
+  "service": "ros_gazebo",
+  "workspaceFolder": "/ws",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {}
+  },
+  "customizations": {
+    "jetbrains": {
+      "backend": "CLion",
+      "plugins": []
+    }
+  },
+  "remoteUser": "dev",
+  "overrideCommand": true,
+  "postCreateCommand": "sudo chown -R dev:dev /ws",
+  "containerEnv": {
+    "HTTP_PROXY": "",
+    "HTTPS_PROXY": "",
+    "NO_PROXY": "localhost,127.0.0.1,host.docker.internal"
+  }
+}

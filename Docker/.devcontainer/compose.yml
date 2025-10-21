@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  ros_gazebo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: "navigation-docking:base"
+    privileged: true
+    environment:
+      - DISPLAY=host.docker.internal:0
+      - QT_X11_NO_MITSHM=1
+      - MAKEFLAGS=-j1
+      - CMAKE_BUILD_PARALLEL_LEVEL=1
+      - TERM=xterm-256color
+    volumes:
+      - ..:/ws:cached
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - /dev:/dev
+    network_mode: bridge
+    tty: true
+    command: [ "/bin/bash", "-lc", "exec bash" ]
