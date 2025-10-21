@@ -1,0 +1,29 @@
+# Build artifacts
+build/
+install/
+log/
+
+# ROS bags
+*.bag
+
+# Python
+*.pyc
+__pycache__/
+
+# Results
+results/*.csv
+
+# IDEs - ignore everything except shared configs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Optional: if you want to share some IDE settings, be explicit:
+# !.idea/runConfigurations/
+# !.vscode/launch.json
